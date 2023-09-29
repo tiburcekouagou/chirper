@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ChirpController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,3 +36,8 @@ require __DIR__.'/auth.php';
 Route::resource('chirps', ChirpController::class)
             ->only('index', 'store')
             ->middleware(['auth', 'verified']);
+
+
+
+//
+Route::get('/change-language/{loclae}', [LanguageController::class, "changeLanguage"])->name("change.language");

@@ -17,17 +17,29 @@ class ChirpController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
+    {
+        //
+        $validated = $request->validate([
+            'message' => 'required|string|max:255',
+        ]);
+        
+        //envoi des données au BDD
+        $request->user()->chirps()->create($validated);
+        
+        //rediriger sur chirps.index
+        return redirect(route('chirps.index'));
+        
+        // dd($validated);
+        // dd($request->user());
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
     {
         //
     }

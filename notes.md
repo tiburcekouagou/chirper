@@ -44,9 +44,35 @@ Permet de créer un component, mais cette fois-ci dans app\View\Components on a 
 ## npm run dev
 Pour gérer la partie front du projet
 
+## php artisan lang:publish
+Notifie à Laravel qu'on veut utiliser d'autres langues
+
+## php artisan make:migration add_user_id_and_message_to_chirps
+Exactement ce que tu dis la ligne, ajout les colonnes user_id et message à la table chirps
+
+## hp artisan migrate:rollback
+
 ## Il existe deux types de composants
-Les composant sous forme de classe et ceux anonymes.
+Les composants sous forme de classe et ceux anonymes.
  # Les composants sous forme de classe 
  Sont les plus versatiles et robustes. Ils peuvent prendre des paramètres
  # Les composants anonymes 
  Sont les plus simples ne prenant aucun paramètre
+
+ ## Route: fonction d'aide Laravel
+ `route()` : fonction qui génère l'URL correspondant à une route nommée
+ `__()` : fonction qui renvoie la traduction pour une chaîne de caractère donnée
+ `action()`: fonction génère l'URL correspondant à l'action méthode d'un controlleur donné
+ `url()` : fonction qui génère l'URL complet (http://.../url)
+
+ `session()` : fonction qui récupère les données de session 
+ `setLocale()` : fonction qui change la langue de l'application
+
+ ## La Masse assignation
+ La mass assignation est une technique qui permet de définir plusieurs attributs d'un media en une seule fois. 
+ Par exemple, imaginez que vous avez un modèle  `Utlilsateur` avec des champs tels que `nom`, `email`, et `rôle` . 
+ La mass assignation permet de définir tous ces champs en une fois, ce qui peut être très pratique et vous faire 
+ gagner du temps.
+
+ Cependant, si elle n'est pas gérée avec précaution, la mass assignationn peut entrainer  une vulnérabilité de 
+ sécurité appelée "over-posting" ou "vulnérabilité de mass assignation".
