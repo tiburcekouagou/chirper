@@ -68,6 +68,8 @@ Les composants sous forme de classe et ceux anonymes.
  `session()` : fonction qui récupère les données de session 
  `setLocale()` : fonction qui change la langue de l'application
 
+`auth()->user()`: permet de récupérer l'utilisateur connecté
+
  ## La Masse assignation
  La mass assignation est une technique qui permet de définir plusieurs attributs d'un media en une seule fois. 
  Par exemple, imaginez que vous avez un modèle  `Utlilsateur` avec des champs tels que `nom`, `email`, et `rôle` . 
@@ -76,3 +78,11 @@ Les composants sous forme de classe et ceux anonymes.
 
  Cependant, si elle n'est pas gérée avec précaution, la mass assignationn peut entrainer  une vulnérabilité de 
  sécurité appelée "over-posting" ou "vulnérabilité de mass assignation".
+
+## Les étapes de création d'une notification
+
+1. créer une notification (sms, email, slack...)
+2. créer un événement
+3. Dispatcher un événement
+4. Créer un Event Listener
+5. Lier l'Event Listener à l'événement créé
